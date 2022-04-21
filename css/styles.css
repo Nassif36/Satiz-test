@@ -1,0 +1,273 @@
+:root {
+    --primary-green: #1D3A2B;
+    --secondary-orange: #C8582C;
+    --width-pagina: 60vw + 15%;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Amarantha regular',
+        'Lucida Console',
+        'Trebuchet MS',
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+h1 {
+    font-size: 1.4rem;
+}
+
+h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+h3 {}
+
+a {
+    font-size: .9rem;
+    text-decoration: none;
+}
+
+p {}
+
+li {
+    list-style: none;
+
+}
+
+/** navegacion **/
+.site-navigation {
+    background-color: var(--primary-green);
+    border-bottom: 8px solid var(--secondary-orange);
+    padding: .5em 1em;
+}
+
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: calc(var(--width-pagina));
+    padding: 1em 0;
+}
+
+.logo img {
+    max-width: 190px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.boton-nav-bar {
+    margin: .4em 1em .3em 1em;
+    height: 1px;
+    width: 100%;
+    background-color: #fffffff6;
+}
+
+.nav-desplegable {
+    display: none;
+}
+
+.nav-links a {
+    color: white;
+    text-transform: uppercase;
+}
+
+.header-banner {
+    background-image: url(../img/banner.jpg);
+    min-height: 35vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: grid;
+    place-content: center;
+}
+
+.site-main {}
+
+.main-productos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    background-color: #b8b8b8f6;
+
+    color: white;
+}
+
+.productos-barra {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: calc(var(--width-pagina));
+    width: 100%;
+}
+
+.productos-desplegable {
+    font-weight: 600;
+    background-color: var(--primary-green);
+    padding: 1.5em;
+    transition: all .8s ease;
+}
+
+.productos-icons {
+    background-color: var(--primary-green);
+}
+
+.productos-icons i {
+    font-size: 1.4rem;
+    padding: 1em;
+    transition: all .8s ease;
+    cursor: pointer;
+
+}
+
+.productos-icons i:hover,
+.productos-desplegable:hover {
+    background-color: var(--secondary-orange);
+    transform: translateY(-5%);
+    cursor: pointer;
+}
+
+
+
+
+.productos-grid {
+    display: grid;
+    max-width: calc(var(--width-pagina));
+    margin: 0 auto;
+
+    gap: 1em;
+    padding: 2% 0;
+}
+
+.productos-grid li {
+
+
+    background-color: #d5d5d5;
+}
+
+.productos-grid li p {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 1.5em;
+    transition: all .8s ease;
+}
+
+.productos-grid li p:hover {
+    background-color: var(--primary-green);
+    color: white;
+    cursor: pointer;
+}
+
+.section-cards {
+   
+  
+}
+
+.cards-grid {
+    max-width: calc(var(--width-pagina));
+    margin: 0 auto;
+    place-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2em;
+     min-height: 50vh;
+}
+
+.card {
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    gap: 1em;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.089);
+    flex-direction: column;
+    text-align: center;
+    padding: 2em;
+ 
+    border-radius: 3px;
+    
+}
+.card p {
+    font-weight: 600;
+    max-width: 37ch;
+}
+
+.card i {
+    font-size: 5rem;
+}
+
+.card span {
+
+}
+
+.frase-satiz h1 {
+
+    padding: 1em;
+    margin: 0 auto;
+    color: white;
+    background-color: var(--secondary-orange);
+}
+
+.site-footer {
+    display: flex;
+    margin: 2em 0 0 0;
+    flex-direction: column;
+}
+
+.section-mapa {
+    background-color: var(--primary-green);
+     color: white;
+     padding: 1em;
+          text-align: center;
+}
+
+.mapa-contenedor {
+    max-width: calc(var(--width-pagina));
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    align-items: flex-start;
+    color: white;
+    padding: 2em 0;
+    flex-direction: column;
+    text-align: left;
+   
+}
+
+.section-final {
+
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em;
+}
+.final-icons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 350px;
+    align-items:center;
+}
