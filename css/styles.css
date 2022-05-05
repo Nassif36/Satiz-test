@@ -154,7 +154,7 @@ li {
 }
 
 .productos-icons i:hover,
-.productos-desplegable:hover:not(:first-of-type) {
+.productos-desplegable:hover:not(:first-child) {
     background-color: var(--secondary-light);
     transform: translateY(-5%);
     cursor: pointer;

@@ -1,32 +1,31 @@
- let i = 0;
- let text = "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%50 OFF Con el codigo khalil jejeje";
- let speed = 35;
+window.addEventListener('DOMContentLoaded', ()=>{
+    alert('DOM CARGADO')
+     let i = 0;
+     let text = "%%%%%50 OFF Con el codigo k-coder%%%%%";
+     let speed = 35;
 
- function typeWriter(n) {
- 
+     function typeWriter(n) {
 
-     if (i < text.length) {
-         document.getElementById("demo").innerHTML += text.charAt(i);
-         i++;
-         setTimeout(typeWriter, speed);
+
+         if (i < text.length) {
+             document.getElementById("demo").innerHTML += text.charAt(i);
+             i++;
+             setTimeout(typeWriter, speed);
+         }
      }
- }
 
- typeWriter()
+     typeWriter()
+     let funcion = function () {
+         alert('clickeaste el icono')
+         let evento = event.target.className;
+         console.log(evento)
+        if (evento = 'clickeaste el home') {
 
+        } else if (evento = 'fa-cart-shopping') {
+            alert('clickeaste el carrito')
+        }
+     }
+     let iconosClick = document.getElementById('iconos-barra');
+     iconosClick.addEventListener('click', funcion);
 
-let desplegableClick = document.getElementById('desplegable-click');
-
-function eventClick() {
-
-    let desplegable = document.getElementById('desplegable')
-    desplegable.style.display = 'block';
-    for(desplegables in desplegable) {
-        addEventListener.click  (()=> {
-             desplegable.style.display = 'none'
-        }) 
-    }
-}
-
-desplegableClick.addEventListener('click', eventClick);
-
+});
