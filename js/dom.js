@@ -16,11 +16,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
      typeWriter()
      let funcion = function () {
-         alert('clickeaste el icono')
+        
          let evento = event.target.className;
          console.log(evento)
-        if (evento = 'clickeaste el home') {
-
+        if (evento = 'fa-home') {
+            alert('clickeaste el home')
         } else if (evento = 'fa-cart-shopping') {
             alert('clickeaste el carrito')
         }
