@@ -1,6 +1,6 @@
 :root {
-    --primary-green: #1D3A2B;
-    --secondary-orange: #C8582C;
+    --primary-blue: #2063aa;
+    --secondary-light: #0000001a;
     --width-pagina: 60vw + 15%;
 }
 
@@ -47,8 +47,8 @@ li {
 
 /** navegacion **/
 .site-navigation {
-    background-color: var(--primary-green);
-    border-bottom: 8px solid var(--secondary-orange);
+    background-color: var(--primary-blue);
+    border-bottom: 8px solid var(--secondary-light);
     padding: .5em 1em;
 }
 
@@ -59,6 +59,22 @@ li {
     margin: 0 auto;
     max-width: calc(var(--width-pagina));
     padding: 1em 0;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 1em;
+    background-color: #ffffff;
+    padding: .5em 1em;
+    border-radius: 33px;
+}
+.logo h1 {
+
+}
+.logo i{
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
 }
 
 .logo img {
@@ -89,7 +105,7 @@ li {
 }
 
 .header-banner {
-    background-image: url(../img/banner.jpg);
+    background-image: url(../img/undraw_web_shopping_re_owap.png);
     min-height: 35vh;
     background-size: contain;
     background-repeat: no-repeat;
@@ -120,13 +136,13 @@ li {
 
 .productos-desplegable {
     font-weight: 600;
-    background-color: var(--primary-green);
+    background-color: var(--primary-blue);
     padding: 1.5em;
     transition: all .8s ease;
 }
 
 .productos-icons {
-    background-color: var(--primary-green);
+    background-color: var(--primary-blue);
 }
 
 .productos-icons i {
@@ -138,8 +154,8 @@ li {
 }
 
 .productos-icons i:hover,
-.productos-desplegable:hover {
-    background-color: var(--secondary-orange);
+.productos-desplegable:hover:not(:first-of-type) {
+    background-color: var(--secondary-light);
     transform: translateY(-5%);
     cursor: pointer;
 }
@@ -149,6 +165,7 @@ li {
 
 .productos-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     max-width: calc(var(--width-pagina));
     margin: 0 auto;
 
@@ -170,7 +187,7 @@ li {
 }
 
 .productos-grid li p:hover {
-    background-color: var(--primary-green);
+    background-color: var(--primary-blue);
     color: white;
     cursor: pointer;
 }
@@ -215,13 +232,16 @@ li {
 .card span {
 
 }
+.frase-khali {
+    text-align: center;
 
-.frase-satiz h1 {
+}
 
-    padding: 1em;
-    margin: 0 auto;
+.frase-khali h1 {
+
     color: white;
-    background-color: var(--secondary-orange);
+    background-color: var(--primary-blue);
+    margin: 1em auto;
 }
 
 .site-footer {
@@ -231,7 +251,7 @@ li {
 }
 
 .section-mapa {
-    background-color: var(--primary-green);
+    background-color: var(--primary-blue);
      color: white;
      padding: 1em;
           text-align: center;
