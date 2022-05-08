@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', ()=>{
-    alert('DOM CARGADO')
+
      let i = 0;
      let text = "%%%%%50 OFF Con el codigo k-coder%%%%%";
      let speed = 35;
@@ -18,14 +18,20 @@ window.addEventListener('DOMContentLoaded', ()=>{
      let funcion = function () {
         
          let evento = event.target.className;
-         console.log(evento)
-        if (evento = 'fa-home') {
+
+        if (evento == 'fas fa-home') {
             alert('clickeaste el home')
-        } else if (evento = 'fa-cart-shopping') {
+        } else if(evento == 'fa-solid fa-cart-shopping') {
             alert('clickeaste el carrito')
         }
      }
      let iconosClick = document.getElementById('iconos-barra');
      iconosClick.addEventListener('click', funcion);
+
+
+     
+
+
+
 
 });

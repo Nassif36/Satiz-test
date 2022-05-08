@@ -38,11 +38,35 @@ a {
     text-decoration: none;
 }
 
-p {}
+p {
+    font-size: 1rem;
+}
 
 li {
     list-style: none;
 
+}
+
+.btn-comprar {
+
+    outline: none;
+    font-size: 1rem;
+    padding: 1.1em 3.5em;
+    border-radius: 33px;
+    background-color: green;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all .3s ease;
+
+}
+
+.btn-comprar:hover {
+    background-color: white;
+    border: 2px solid green;
+    box-shadow: none;
+    color: green;
 }
 
 /** navegacion **/
@@ -60,19 +84,20 @@ li {
     max-width: calc(var(--width-pagina));
     padding: 1em 0;
 }
+
 .logo {
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     gap: 1em;
     background-color: #ffffff;
     padding: .5em 1em;
     border-radius: 33px;
 }
-.logo h1 {
 
-}
-.logo i{
+.logo h1 {}
+
+.logo i {
     font-size: 1.5rem;
     color: rgb(0, 0, 0);
 }
@@ -143,14 +168,43 @@ li {
 
 .productos-icons {
     background-color: var(--primary-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .productos-icons i {
-    font-size: 1.4rem;
     padding: 1em;
+    font-size: 1.4em;
+
     transition: all .8s ease;
     cursor: pointer;
 
+}
+
+.carrito-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-blue);
+    position: relative;
+
+}
+
+.carrito-flex p {
+    position: absolute;
+    z-index: 15;
+    top: 3%;
+    left: 60%;
+    color: #040404;
+    background-color: #ffffff;
+    padding: .2em .4em;
+    border-radius: 100%;
+    font-weight: 600;
+
+    aspect-ratio: 2/1;
+
+    text-align: center;
 }
 
 .productos-icons i:hover,
@@ -166,36 +220,72 @@ li {
 .productos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    place-content: center;
     max-width: calc(var(--width-pagina));
     margin: 0 auto;
-
     gap: 1em;
     padding: 2% 0;
 }
 
-.productos-grid li {
+.producto {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    filter: drop-shadow(12px 12px 25px #00000018);
+    max-width: max-content;
+    border-radius: 3px;
 
-
-    background-color: #d5d5d5;
 }
 
-.productos-grid li p {
+.producto img {
+    width: 100%;
+    max-width: 350px;
+    display: block;
+    aspect-ratio: 1/1;
+
+}
+
+.producto-texto {
+    background-color: #f3f3f3;
+    padding: 1em 0;
+    color: var(--primary-blue);
+}
+
+.producto-titulo {
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+.producto-texto span {
+    color: black;
+    font-weight: 600;
+    font-size: 1.1rem;
+    background-color: #f9fff9;
+    padding: 1em;
+    border-radius: 33px;
+}
+
+.producto-descripcion {
+    padding: 1em;
+}
+
+
+
+
+.producto li p {
     font-weight: 600;
     text-transform: uppercase;
     padding: 1.5em;
     transition: all .8s ease;
 }
 
-.productos-grid li p:hover {
+.producto li p:hover {
     background-color: var(--primary-blue);
     color: white;
     cursor: pointer;
 }
 
-.section-cards {
-   
-  
-}
+.section-cards {}
 
 .cards-grid {
     max-width: calc(var(--width-pagina));
@@ -204,22 +294,23 @@ li {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2em;
-     min-height: 50vh;
+    min-height: 50vh;
 }
 
 .card {
     display: flex;
-    justify-content:space-between;
-    align-items:center;
+    justify-content: space-between;
+    align-items: center;
     gap: 1em;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.089);
     flex-direction: column;
     text-align: center;
     padding: 2em;
- 
+
     border-radius: 3px;
-    
+
 }
+
 .card p {
     font-weight: 600;
     max-width: 37ch;
@@ -229,9 +320,8 @@ li {
     font-size: 5rem;
 }
 
-.card span {
+.card span {}
 
-}
 .frase-khali {
     text-align: center;
 
@@ -252,9 +342,9 @@ li {
 
 .section-mapa {
     background-color: var(--primary-blue);
-     color: white;
-     padding: 1em;
-          text-align: center;
+    color: white;
+    padding: 1em;
+    text-align: center;
 }
 
 .mapa-contenedor {
@@ -269,7 +359,7 @@ li {
     padding: 2em 0;
     flex-direction: column;
     text-align: left;
-   
+
 }
 
 .section-final {
@@ -279,15 +369,16 @@ li {
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     flex-direction: column;
     gap: 1em;
     padding: 2em;
 }
-.final-icons{
+
+.final-icons {
     display: flex;
     justify-content: space-between;
     width: 100%;
     max-width: 350px;
-    align-items:center;
+    align-items: center;
 }
