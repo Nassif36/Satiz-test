@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', ()=>{
 
      let i = 0;
-     let text = "%%%%%50 OFF Con el codigo k-coder%%%%%";
+     let text = "Las mejores caps encontralas en ebrand by k";
      let speed = 35;
 
      function typeWriter(n) {

@@ -20,6 +20,7 @@ body {
         Arial,
         Helvetica,
         sans-serif;
+        
 }
 
 h1 {
@@ -52,7 +53,7 @@ li {
     outline: none;
     font-size: 1rem;
     padding: 1.1em 3.5em;
-    border-radius: 33px;
+    border-radius: 33px 0 0 33px;
     background-color: green;
     color: white;
     font-weight: 600;
@@ -146,7 +147,7 @@ li {
     justify-content: center;
     align-items: center;
     gap: 1em;
-    background-color: #b8b8b8f6;
+    background-color: var(--primary-blue);
 
     color: white;
 }
@@ -216,6 +217,11 @@ li {
 
 
 
+.section-productos {
+ 
+
+    min-height: 100vh;
+}
 
 .productos-grid {
     display: grid;
@@ -224,12 +230,12 @@ li {
     max-width: calc(var(--width-pagina));
     margin: 0 auto;
     gap: 1em;
-    padding: 2% 0;
+    padding: 5% 0;
 }
 
 .producto {
-    display: grid;
-    place-content: center;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     filter: drop-shadow(12px 12px 25px #00000018);
     max-width: max-content;
@@ -256,13 +262,21 @@ li {
     font-size: 1.3rem;
 }
 
+.compra-botones {
+    display: flex;
+    justify-content: center;
+
+    align-items:center;
+}
+
 .producto-texto span {
-    color: black;
-    font-weight: 600;
-    font-size: 1.1rem;
-    background-color: #f9fff9;
-    padding: 1em;
-    border-radius: 33px;
+    color: rgb(250, 250, 250);
+    font-weight: 600;   
+    font-size: 1rem;
+    background-color: green;
+    padding: 1.2em;
+    border-radius: 0 33px 33px 0;
+    border-left: 2px solid white;
 }
 
 .producto-descripcion {
@@ -329,9 +343,9 @@ li {
 
 .frase-khali h1 {
 
-    color: white;
-    background-color: var(--primary-blue);
-    margin: 1em auto;
+    color: rgb(12, 12, 12);
+    background-color: #2063aa1e;
+    padding: 1em;
 }
 
 .site-footer {

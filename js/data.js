@@ -37,8 +37,10 @@ window.addEventListener('DOMContentLoaded', () => {
            <div class="producto-texto">
             <p class="producto-titulo">${producto.titulo}</p>
             <p class="producto-descripcion">${producto.descripcion}</p>
-             <button class="btn btn-comprar">Buy</button>
-            <span>$${producto.precio}</span>
+            <div class="compra-botones">
+                <button class="btn btn-comprar">Añadir al carrito</button>
+                <span>$${producto.precio}</span>
+            </div>
            
             </div>
         </li>
