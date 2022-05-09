@@ -12,38 +12,46 @@
 
 <body>
 
-    <nav class="site-navigation">
+    <nav class="site-navigation" id="site-navigation">
         <div class="barra">
             <div class="logo">
                 <i class="fa-solid fa-bag-shopping"></i>
                 <h1>E-Brand</h1>
             </div>
 
-            <ul class="nav-links">
+    
 
-                <div class="boton-nav" id="desplegable-click">
+                <div class="boton-nav" onclick="openNav()" id="sidebar-open">
                     <div class="boton-nav-bar"></div>
                     <div class="boton-nav-bar"></div>
                     <div class="boton-nav-bar"></div>
 
                 </div>
 
-            </ul>
+        
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#">Inicio</a>
+                <a href="#">Acerca de</a>
+                <a href="#">Productos</a>
 
+                <a href="#">Contacto</a>
+            </div>
         </div>
     </nav>
-    <header class="site-header">
-        <div class="header-banner"></div>
-        <div class="frase-khali">
-            <h1 id="demo">
+    
+    <main class="site-main" id="main">
+        <header class="site-header">
+            <div class="header-banner"></div>
+            <div class="frase-khali">
+                <h1 id="demo">
 
 
-            </h1>
+                </h1>
 
-        </div>
+            </div>
 
-    </header>
-    <main class="site-main">
+        </header>
         <article class="main-productos">
             <div class="productos-barra">
                 <p class="productos-desplegable">
@@ -80,7 +88,7 @@
 
                 </div>
                 <div class="card">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, temporibus!</p> <i
+                    <p>Retiro a acordar con el vendedor!</p> <i
                         class="fa-solid fa-truck-fast"></i>
                     <span>Lorem, ipsum dolor.</span>
 
@@ -102,12 +110,12 @@
             <div class="mapa-contenedor">
                 <h2>Mapa de nuestro Sitio</h2>
                 <ul class="mapa-lista">
-                    <li>Carrito de Compras</li>
+
                     <li>Políticas de Servicio</li>
                     <li>Sistema de identificación</li>
                 </ul>
             </div>
-            <p>E-Brand® | E-Commerce</p>
+            <p>E-Brand® | Khalil</p>
         </section>
 
         <div class="section-final">
@@ -117,7 +125,7 @@
                 <i class="fa fa-instagram"></i>
                 <i class="fas fa-lock"></i>
             </div>
-            <p>Diseño y programación:Khalil Bichara 2022</p>
+       
         </div>
 
     </footer>
