@@ -181,6 +181,7 @@ li {
     place-content: center;
     padding: 0 0 .1em 0;
     cursor: pointer;
+    transition: all .5s ease;
 }
 
 .boton-nav-bar {

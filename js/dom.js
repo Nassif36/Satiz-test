@@ -36,12 +36,13 @@ window.addEventListener('DOMContentLoaded', ()=>{
 let siteNavigation = document.getElementById("site-navigation");
 let sidebar = document.getElementById("mySidenav");
 let siteMain = document.getElementById("main")
+let sidebarOpen = document.getElementById("sidebar-open")
 
 function openNav() {
     sidebar.style.width = "250px";
     siteMain.style.marginRight = "150px";
     siteNavigation.style.marginRight = "250px";
-
+    sidebarOpen.style.opacity = "0"
 }
 
 /* Set the width of the side navigation to 0 and the Right margin of the page content to 0, and the background color of body to white */
@@ -49,6 +50,6 @@ function closeNav() {
     sidebar.style.width = "0";
     siteMain.style.marginRight = "0";
     siteNavigation.style.marginRight = "0";
-
+    sidebarOpen.style.opacity = "1"
 }
 
