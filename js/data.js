@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
             this.descripcion = descripcion;
             this.precio =precio
             this.img = img;
-
+            
 
         }
    
