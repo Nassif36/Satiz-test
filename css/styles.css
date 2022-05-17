@@ -270,11 +270,12 @@ li {
     width: 100%;
 }
 
-.productos-desplegable {
+.productos-ver {
     font-weight: 600;
-    background-color: var(--primary-blue);
-    padding: 1.5em;
+    background-color: var(--primary-green);
+    padding: 1.6em;
     transition: all .8s ease;
+    cursor: pointer;
 }
 
 .productos-icons {
@@ -319,7 +320,7 @@ li {
 }
 
 .productos-icons i:hover,
-.productos-desplegable:hover:not(:first-child) {
+.productos-ver:hover:not(:first-child) {
     background-color: var(--secondary-light);
     transform: translateY(-5%);
     cursor: pointer;
