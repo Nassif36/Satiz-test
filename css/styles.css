@@ -1,6 +1,7 @@
 :root {
     --primary-blue: #2063aa;
     --primary-green: #20aa67;
+    --red: #aa2020;
     --secondary-light: #0000001a;
     --width-pagina: 60vw + 15%;
 }
@@ -69,6 +70,26 @@ li {
     border: 2px solid var(--primary-green);
     box-shadow: none;
     color: var(--primary-green);
+}
+.btn-eliminar {
+
+    outline: none;
+    font-size: 1rem;
+    padding: .6em 1.5em;
+    border-radius: 33px 0 0 33px;
+    background-color: var(--red);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all .3s ease;
+
+}
+.btn-eliminar:hover {
+    background-color: var(--red);
+    border: 2px solid white;
+    box-shadow: none;
+    color: white;
 }
 
 /** navegacion **/
@@ -153,6 +174,23 @@ li {
      }
  }
 
+  .sidenav img {
+      max-width: 150px;
+  }
+  .sidenav .producto {
+      padding: 1em;
+      font-size: 70%;
+      min-width: 100%;
+  }
+  .sidenav .producto * {
+     display: flex;
+     justify-content: center;
+     align-items:center;
+     flex-direction: column;
+     width: 100%;
+     text-align: center;
+     border-radius: 0;
+  }
 .logo {
     display: flex;
     justify-content: center;

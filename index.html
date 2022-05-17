@@ -52,25 +52,34 @@
             </div>
 
         </header>
-        <article class="main-productos">
+        <article class="main-productos" id="carrito-navigation">
+            <p id="carrito-open"></p>
+            <div id="sidebarcarrito" class="sidenav" >
+                <a href="javascript:void(0)" class="closebtn" onclick="closeCarro()">&times;</a>
+            
+                <a href="#">Contacto</a>
+            </div>
             <div class="productos-barra">
-                <p class="productos-desplegable">
-                    Productos
+                
+
+                <p class="productos-desplegable" id="todos">
+                    Ver todos
 
                 </p>
                 <div class="productos-icons" id="iconos-barra">
-                     <i class="fas fa-glasses" id="glasses"></i>
-                       <i class="fas fa-heart" id="gorritos"></i>
-                    <div class="carrito-flex">
-                        <i class="fa-solid fa-cart-shopping">
 
-                        </i>
-                        <p id="carrito"></p>
-                       
-                    </div>
+                     <i class="fas fa-glasses" id="anteojos"></i>
+                       <i class="fa-brands fa-redhat" id="gorritos"></i>
+                    
+                </div>
+                <div class="carrito-flex" id="carritohtml">
+                    <i class="fa-solid fa-cart-shopping" onclick="openCarro()">
+
+                    </i>
+                    <p id="carrito"></p>
+                
 
                 </div>
-
             </div>
         </article>
 
