@@ -127,7 +127,7 @@ window.addEventListener('DOMContentLoaded', () => {
                  el.addEventListener('click', function () {
 
                      arrayCarrito.pop(el.parentNode.parentElement);
-                     console.log(arrayCarrito);
+                    
                      console.log(el.parentNode.parentElement);
 
                      carrito.innerHTML = arrayCarrito.length;
