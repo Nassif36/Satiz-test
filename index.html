@@ -19,16 +19,16 @@
                 <h1>E-Brand</h1>
             </div>
 
-    
 
-                <div class="boton-nav" onclick="openNav()" id="sidebar-open">
-                    <div class="boton-nav-bar"></div>
-                    <div class="boton-nav-bar"></div>
-                    <div class="boton-nav-bar"></div>
 
-                </div>
+            <div class="boton-nav" onclick="openNav()" id="sidebar-open">
+                <div class="boton-nav-bar"></div>
+                <div class="boton-nav-bar"></div>
+                <div class="boton-nav-bar"></div>
 
-        
+            </div>
+
+
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="#">Inicio</a>
@@ -39,7 +39,7 @@
             </div>
         </div>
     </nav>
-    
+
     <main class="site-main" id="main">
         <header class="site-header">
             <div class="header-banner"></div>
@@ -54,30 +54,35 @@
         </header>
         <article class="main-productos" id="carrito-navigation">
             <p id="carrito-open"></p>
-            <div id="sidebarcarrito" class="sidenav" >
-                <a href="javascript:void(0)" class="closebtn" onclick="closeCarro()">&times;</a>
-            
-                <a href="#">Tu compra</a>
-            </div>
-            <div class="productos-barra">
+            <aside id="sidebarcarrito" class="sidenav">
+                <div class="barra-menu">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeCarro()">&times;</a>
+
+                    <a href="#">Tu compra</a>
+                   
+                </div>
+                 <p id="total"></p>
+                <div id="listaproductos"></div>
                 
+            </aside>
+            <div class="productos-barra">
+
 
                 <p class="productos-ver" id="todos">
                     Ver todos
-
                 </p>
                 <div class="productos-icons" id="iconos-barra">
 
-                     <i class="fas fa-glasses" id="anteojos"></i>
-                       <i class="fa-brands fa-redhat" id="gorritos"></i>
-                    
+                    <i class="fas fa-glasses" id="anteojos"></i>
+                    <i class="fa-brands fa-redhat" id="gorritos"></i>
+
                 </div>
                 <div class="carrito-flex" id="carritohtml">
                     <i class="fa-solid fa-cart-shopping" onclick="openCarro()">
 
                     </i>
                     <p id="carrito"> </p>
-                
+
 
                 </div>
             </div>
@@ -99,8 +104,7 @@
 
                 </div>
                 <div class="card">
-                    <p>Retiro a acordar con el vendedor!</p> <i
-                        class="fa-solid fa-truck-fast"></i>
+                    <p>Retiro a acordar con el vendedor!</p> <i class="fa-solid fa-truck-fast"></i>
                     <span>Lorem, ipsum dolor.</span>
 
                 </div>
@@ -136,7 +140,7 @@
                 <i class="fa fa-instagram"></i>
                 <i class="fas fa-lock"></i>
             </div>
-       
+
         </div>
 
     </footer>

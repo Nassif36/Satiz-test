@@ -6,20 +6,20 @@ window.addEventListener('DOMContentLoaded', () => {
             this.categoria = categoria;
             this.titulo = titulo.toUpperCase();
             this.descripcion = descripcion;
-            this.precio =precio
+            this.precio = precio
             this.img = img;
-            
+
 
         }
-   
-   
+
+
 
     }
 
 
     let productos = [];
 
-    productos.push(new Productos(1,"Indumentaria","Gorrita blanca", "Descripcion",155, "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"));
+    productos.push(new Productos(1, "Indumentaria", "Gorrita blanca", "Descripcion", 155, "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"));
 
     productos.push(new Productos(2, "Indumentaria", "Gorrita roja", "Descripcion", 100, "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"));
 
@@ -31,12 +31,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
     productos.push(new Productos(6, "Accesorios", "lente templado", "Descripcion", 15000, "https://images.unsplash.com/photo-1501619838605-f3e4c602db04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"));
 
-    productos.push(new Productos(7,"Accesorios", "lente", "Descripcion", 55, "https://images.unsplash.com/photo-1501619838605-f3e4c602db04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"))
+    productos.push(new Productos(7, "Accesorios", "lente", "Descripcion", 55, "https://images.unsplash.com/photo-1501619838605-f3e4c602db04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"))
 
-    productos.push(new Productos(8,"Accesorios", "lente para ver", "Descripcion", 35, "https://images.unsplash.com/photo-1501619838605-f3e4c602db04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",33))
+    productos.push(new Productos(8, "Accesorios", "lente para ver", "Descripcion", 35, "https://images.unsplash.com/photo-1501619838605-f3e4c602db04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80", 33))
 
     console.log(productos);
-    
+
 
     // Filtrar por numero de id ascendente
     productos.sort((a, b) => a.id - b.id);
@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let productosHTML = '';
 
         for (const item of arrayProductos) {
-                 
+
             productosHTML = productosHTML + `
 
                 <li class="producto">
@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         <p>${item.id}</p>
                         <p class="producto-descripcion">${item.descripcion}</p>
                         <div class="compra-botones">
-                            <button class="btn btn-comprar">Agregar al carrito</button>
+                            <button class="btn btn-comprar" data-id="${item.id}">Agregar al carrito</button>
                             <span>$${item.precio}</span>
                         </div>
                 
@@ -75,101 +75,122 @@ window.addEventListener('DOMContentLoaded', () => {
             document.getElementById('productos').innerHTML = productosHTML;
         }
 
-    }   
+    }
     // Reenderizar producto seleccionado
 
-        // Por default puse que se ejecute con todos los productos para que no se vea vacio
-        renderProductos(productos)
-  
-        const filtroTodos = document.getElementById('todos');
-        filtroTodos.addEventListener('click', function () {
-            renderProductos(productos);
-        });
-        const filtroAccesorios = document.getElementById('anteojos');
-        filtroAccesorios.addEventListener('click', function(){
-            renderProductos(Accesorios);
-        });
+    // Por default puse que se ejecute con todos los productos para que no se vea vacio
+    renderProductos(productos)
+
+    const filtroTodos = document.getElementById('todos');
+    filtroTodos.addEventListener('click', function () {
+        renderProductos(productos);
+    });
+    const filtroAccesorios = document.getElementById('anteojos');
+    filtroAccesorios.addEventListener('click', function () {
+        renderProductos(Accesorios);
+    });
 
 
-        const filtroIndumentaria = document.getElementById('gorritos');
-        filtroIndumentaria.addEventListener('click', function(){
-            renderProductos(Indumentaria)
-        });
+    const filtroIndumentaria = document.getElementById('gorritos');
+    filtroIndumentaria.addEventListener('click', function () {
+        renderProductos(Indumentaria)
+    });
 
-    console.log(Accesorios);
-    
+    // console.log(Accesorios);
+
 
     // Agregar al carrito
 
     let arrayCarrito = []
 
     const botonAgregar = document.querySelectorAll('.btn-comprar');
-    const botonEliminar = document.querySelectorAll('.btn-eliminar');
+    // const botonEliminar = document.querySelectorAll('.btn-eliminar');
+     carrito.innerHTML = 0;
+    botonAgregar.forEach(el => {
 
-             botonAgregar.forEach(el => {
-                 el.addEventListener('click', function () {
-
-                     arrayCarrito.push(el.parentNode.parentElement);
-                     console.log(arrayCarrito);
-                     console.log(el.parentNode.parentElement);
-                     carrito.innerHTML = arrayCarrito.length;
+        el.addEventListener('click', function (e) {
 
 
+            //  console.log(arrayCarrito);
+            //  console.log(el.parentNode.parentElement);
 
-                     renderCarrito(arrayCarrito)
-                 });
-
-             });
-
-
-
-             botonEliminar.forEach(el => {
-                 el.addEventListener('click', function () {
-
-                     arrayCarrito.pop(el.parentNode.parentElement);
-                    
-                     console.log(el.parentNode.parentElement);
-
-                     carrito.innerHTML = arrayCarrito.length;
+            const found = productos.find(producto => producto.id == e.target.dataset.id);
+            arrayCarrito.push(found);
+            console.log(arrayCarrito);
+            carrito.innerHTML = arrayCarrito.length;
 
 
+            let total = [];
+            arrayCarrito.forEach(found => {
 
-                     renderCarrito(arrayCarrito)
-                 });
+                total.push(found.precio);
 
-             });
+            });
+            console.log(total);
+
+
+            let sum = 0;
+            for (precio of arrayCarrito) {
+                sum += found.precio;
+            }
+            document.getElementById('total').innerHTML = 'Total: $' + '' + sum;
+
+            console.log(sum);
+            renderCarrito(arrayCarrito);
+
+
+        });
+
+    });
+
+
+
+    //  botonEliminar.forEach(el => {
+    //      el.addEventListener('click', function () {
+
+    //          arrayCarrito.pop(el.parentNode.parentElement);
+
+    //          console.log(el.parentNode.parentElement);
+
+
+
+
+
+    //          renderCarrito(arrayCarrito)
+    //      });
+
+    //  });
 
 
     function renderCarrito(arrayCarrito) {
         let carritoHTML = '';
 
-        for (const item of arrayCarrito) {
+        for (const producto of arrayCarrito) {
 
-             carritoHTML = carritoHTML + `
+            carritoHTML = carritoHTML + `
 
-                <li class="producto">
-                     <img src=${item.img}>
-                <div class="producto-texto">
-                        <p class="producto-titulo">${item.titulo}</p>
-                        <p>${item.id}</p>
-                        <p class="producto-descripcion">${item.descripcion}</p>
-                        <div class="compra-botones">
-                            <button class="btn btn-eliminar">Eliminar</button>
-                            <span>$${item.precio}</span>
-                        </div>
+                 <li class="producto">
+                      <img src=${producto.img}>
+                 <div class="producto-texto">
+                         <p class="producto-titulo">${producto.titulo}</p>
+                         <p>${producto.id}</p>
+                         <div class="compra-botones">
+                             <button class="btn btn-eliminar">Eliminar</button>
+                             <span>$${producto.precio}</span>
+                         </div>
                 
-                    </div>
-                </li>
+                     </div>
+                 </li>
 
-            `
+             `
 
-            document.getElementById('sidebarcarrito').innerHTML = carritoHTML;
+            document.getElementById('listaproductos').innerHTML = carritoHTML;
         }
 
     }
 
 
-    
+
 
 
 });

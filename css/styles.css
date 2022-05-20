@@ -149,12 +149,12 @@ li {
  }
 
  /* Position and style the close button (top right corner) */
- .sidenav .closebtn {
-     position: absolute;
-     top: 0;
-     right: 25px;
-     font-size: 36px;
-     margin-right: 50px;
+
+
+ .barra-menu {
+     display: flex;
+     justify-content: center;
+     align-items:center;
  }
 
  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -190,6 +190,27 @@ li {
      width: 100%;
      text-align: center;
      border-radius: 0;
+  }
+  #listaproductos .producto {
+    max-width: 200px;
+    flex-direction: row;
+  }
+  #listaproductos .producto-texto {
+      padding: 1em 0 0 0;
+  }
+  #listaproductos .producto .producto-titulo {
+      font-size: .8rem;
+  }
+  #listaproductos .producto img {
+      max-width: 150px;
+  }
+  #total {
+      text-align: center;
+      width: 100%;
+      background-color: var(--primary-green);
+      padding: 1em 0;
+      font-size: 1.3rem;
+      font-weight: 600;
   }
 .logo {
     display: flex;
@@ -304,10 +325,9 @@ li {
 }
 
 .carrito-flex p {
-    position: absolute;
+
     z-index: 15;
-    top: 3%;
-    left: 60%;
+
     color: #040404;
     background-color: #ffffff;
     padding: .2em .4em;
