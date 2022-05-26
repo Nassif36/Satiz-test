@@ -1,48 +1,39 @@
-window.addEventListener('DOMContentLoaded', () => {
-
-    class Productos {
-        constructor(id, categoria, titulo, descripcion, precio, img) {
-            this.id = parseInt(id);
-            this.categoria = categoria;
-            this.titulo = titulo.toUpperCase();
-            this.descripcion = descripcion;
-            this.precio = precio
-            this.img = img;
-
-
-        }
-
+class Productos {
+    constructor(id, categoria, titulo, descripcion, precio, img) {
+        this.id = parseInt(id);
+        this.categoria = categoria;
+        this.titulo = titulo.toUpperCase();
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.img = img;
 
 
     }
+}
+let productos = [];
 
+productos.push(new Productos(1, "Indumentaria", "Gorrita blanca", "Descripcion", 155, "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"));
 
-    let productos = [];
+productos.push(new Productos(2, "Indumentaria", "Gorrita roja", "Descripcion", 100, "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"));
 
-    productos.push(new Productos(1, "Indumentaria", "Gorrita blanca", "Descripcion", 155, "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"));
+productos.push(new Productos(3, "Indumentaria", "Gorrita verde", "Descripcion", 350, "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"));
 
-    productos.push(new Productos(2, "Indumentaria", "Gorrita roja", "Descripcion", 100, "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"));
+productos.push(new Productos(4, "Indumentaria", "Gorrito negro", "Descripcion", 500, "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"));
 
-    productos.push(new Productos(3, "Indumentaria", "Gorrita verde", "Descripcion", 350, "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"));
+productos.push(new Productos(5, "Indumentaria", "Gorrito", "Descripcion", 1299, "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"));
 
-    productos.push(new Productos(4, "Indumentaria", "Gorrito negro", "Descripcion", 500, "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"));
+productos.push(new Productos(6, "Accesorios", "lente templado", "Descripcion", 15000, "https://images.unsplash.com/photo-1501619838605-f3e4c602db04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"));
 
-    productos.push(new Productos(5, "Indumentaria", "Gorrito", "Descripcion", 1299, "https://images.unsplash.com/photo-1618354691792-d1d42acfd860?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"));
+productos.push(new Productos(7, "Accesorios", "lente", "Descripcion", 55, "https://images.unsplash.com/photo-1501619838605-f3e4c602db04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"))
 
-    productos.push(new Productos(6, "Accesorios", "lente templado", "Descripcion", 15000, "https://images.unsplash.com/photo-1501619838605-f3e4c602db04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"));
+productos.push(new Productos(8, "Accesorios", "lente para ver", "Descripcion", 35, "https://images.unsplash.com/photo-1501619838605-f3e4c602db04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80", 33))
 
-    productos.push(new Productos(7, "Accesorios", "lente", "Descripcion", 55, "https://images.unsplash.com/photo-1501619838605-f3e4c602db04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"))
+console.log(productos);
 
-    productos.push(new Productos(8, "Accesorios", "lente para ver", "Descripcion", 35, "https://images.unsplash.com/photo-1501619838605-f3e4c602db04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80", 33))
-
-    console.log(productos);
-
+window.addEventListener('DOMContentLoaded', () => {
 
     // Filtrar por numero de id ascendente
     productos.sort((a, b) => a.id - b.id);
-
-
-
 
     // Filtrar por categoria
     let Accesorios = productos.filter((producto) => producto.categoria == "Accesorios");
@@ -76,10 +67,34 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
     }
+
+    function renderCarrito(arrayCarrito) {
+        let carritoHTML = '';
+        for (const producto of arrayCarrito) {
+            carritoHTML = carritoHTML + `
+                    <li class="producto">
+                        <img src=${producto.img}>
+                    <div class="producto-texto">
+                            <p class="producto-titulo">${producto.titulo}</p>
+                
+                            <div class="compra-botones">
+                                <button class="btn btn-eliminar">Eliminar</button>
+                                <span>$${producto.precio}</span>
+                            </div>
+                
+                        </div>
+                    </li>
+
+                `
+            document.getElementById('listaproductos').innerHTML = carritoHTML;
+        }
+
+    }
     // Reenderizar producto seleccionado
 
     // Por default puse que se ejecute con todos los productos para que no se vea vacio
     renderProductos(productos)
+
 
     const filtroTodos = document.getElementById('todos');
     filtroTodos.addEventListener('click', function () {
@@ -95,99 +110,79 @@ window.addEventListener('DOMContentLoaded', () => {
     filtroIndumentaria.addEventListener('click', function () {
         renderProductos(Indumentaria)
     });
-
     // console.log(Accesorios);
 
 
     // Agregar al carrito
 
-    let arrayCarrito = []
 
     const botonAgregar = document.querySelectorAll('.btn-comprar');
-    // const botonEliminar = document.querySelectorAll('.btn-eliminar');
-     carrito.innerHTML = 0;
+    const botonEliminar = document.querySelectorAll('.btn-eliminar');
+    carrito.innerHTML = 0;
+
     botonAgregar.forEach(el => {
 
         el.addEventListener('click', function (e) {
-
+            e.preventDefault()
 
             //  console.log(arrayCarrito);
             //  console.log(el.parentNode.parentElement);
 
             const found = productos.find(producto => producto.id == e.target.dataset.id);
             arrayCarrito.push(found);
+
+            // console.log(arrayCarrito);
+
+
+
             console.log(arrayCarrito);
             carrito.innerHTML = arrayCarrito.length;
-
-
             let total = [];
-            arrayCarrito.forEach(found => {
 
+            arrayCarrito.forEach(found => {
                 total.push(found.precio);
+                guardarLocal('productos', JSON.stringify(arrayCarrito));
+                guardarLocal('total', JSON.stringify(total));
 
             });
-            console.log(total);
 
 
+
+            // console.log(total);
+            
             let sum = 0;
-            for (precio of arrayCarrito) {
-                sum += found.precio;
-            }
-            document.getElementById('total').innerHTML = 'Total: $' + '' + sum;
+            let arrayTotal = JSON.parse(localStorage.getItem('total')) || [];
+            //  for (let i = 0; i < total.length; i++) {
+            //      sum += total[i];
+            //       document.getElementById('total').innerHTML = 'Total: $' + '' + sum;
+            //  }
 
-            console.log(sum);
+            for (let i = 0; i < arrayTotal.length; i++) {
+                sum += arrayTotal[i];
+                document.getElementById('total').innerHTML = 'Total: $' + '' + sum;
+                guardarLocal('sumado', JSON.stringify(sum));
+            }
+
+            // console.log(storageArray);
+
+
             renderCarrito(arrayCarrito);
 
 
         });
 
     });
-
-
-
-    //  botonEliminar.forEach(el => {
-    //      el.addEventListener('click', function () {
-
-    //          arrayCarrito.pop(el.parentNode.parentElement);
-
-    //          console.log(el.parentNode.parentElement);
-
-
-
-
-
-    //          renderCarrito(arrayCarrito)
-    //      });
-
-    //  });
-
-
-    function renderCarrito(arrayCarrito) {
-        let carritoHTML = '';
-
-        for (const producto of arrayCarrito) {
-
-            carritoHTML = carritoHTML + `
-
-                 <li class="producto">
-                      <img src=${producto.img}>
-                 <div class="producto-texto">
-                         <p class="producto-titulo">${producto.titulo}</p>
-                         <p>${producto.id}</p>
-                         <div class="compra-botones">
-                             <button class="btn btn-eliminar">Eliminar</button>
-                             <span>$${producto.precio}</span>
-                         </div>
-                
-                     </div>
-                 </li>
-
-             `
-
-            document.getElementById('listaproductos').innerHTML = carritoHTML;
-        }
-
+    const guardarLocal = (clave, valor) => {
+        localStorage.setItem(clave, valor);
     }
+    let arrayCarrito = JSON.parse(localStorage.getItem('productos')) || [];
+    let itemSumado = JSON.parse(localStorage.getItem('sumado')) || [];
+    // console.log(itemSumado);
+    document.getElementById('total').innerHTML = 'Total: $' + '' + itemSumado;
+    carrito.innerHTML = arrayCarrito.length;
+ 
+    renderCarrito(arrayCarrito);
+
 
 
 

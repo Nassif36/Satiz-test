@@ -175,12 +175,15 @@ li {
  }
 
   .sidenav img {
+      aspect-ratio: 1/1;
       max-width: 150px;
+      max-height: 100px;
   }
   .sidenav .producto {
       padding: 1em;
       font-size: 70%;
       min-width: 100%;
+
   }
   .sidenav .producto * {
      display: flex;
@@ -188,6 +191,7 @@ li {
      align-items:center;
      flex-direction: column;
      width: 100%;
+
      text-align: center;
      border-radius: 0;
   }
@@ -196,13 +200,14 @@ li {
     flex-direction: row;
   }
   #listaproductos .producto-texto {
-      padding: 1em 0 0 0;
+    padding: 0 ;
+
   }
   #listaproductos .producto .producto-titulo {
       font-size: .8rem;
   }
   #listaproductos .producto img {
-      max-width: 150px;
+      max-width: 90px;
   }
   #total {
       text-align: center;
