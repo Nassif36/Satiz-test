@@ -120,7 +120,13 @@ window.addEventListener('DOMContentLoaded', () => {
          const found = productos.find(producto => producto.id == e.target.dataset.id);
          arrayCarrito.push(found);
 
-
+        Toastify({
+            text: "Agregaste "+' '+found.titulo,
+            className: "info",
+            style: {
+                background: "linear-gradient(to right, #2063aa, #20aa67)",
+            }
+        }).showToast();
 
          // if(arrayCarrito.length >= 3) {
          //      const carritoEliminar = arrayCarrito.find(producto => producto.id == e.target.dataset.id);
