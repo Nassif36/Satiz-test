@@ -471,6 +471,12 @@ li {
     font-size: 5rem;
 }
 
+
+.fa-trash {
+    color: red;
+    background-color: white;
+
+}
 .card span {}
 
 .frase-khali {
