@@ -1,11 +1,12 @@
 class Productos {
-    constructor(id, categoria, titulo, descripcion, precio, img) {
+    constructor(id, categoria, titulo, descripcion, precio, img, cantidad) {
         this.id = parseInt(id);
         this.categoria = categoria;
         this.titulo = titulo.toUpperCase();
         this.descripcion = descripcion;
         this.precio = precio;
         this.img = img;
+        this.cantidad = parseInt(cantidad);
 
 
     }
@@ -32,12 +33,8 @@ console.log(productos);
 
 window.addEventListener('DOMContentLoaded', () => {
 
-    // Filtrar por numero de id ascendente
-    productos.sort((a, b) => a.id - b.id);
+   
 
-    // Filtrar por categoria
-    let Accesorios = productos.filter((producto) => producto.categoria == "Accesorios");
-    let Indumentaria = productos.filter((producto) => producto.categoria == "Indumentaria");
 
     // Funcion para reenderizar productos
     function renderProductos(arrayProductos) {
@@ -90,99 +87,110 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
     }
-    // Reenderizar producto seleccionado
 
-    // Por default puse que se ejecute con todos los productos para que no se vea vacio
-    renderProductos(productos)
+     // Filtrar por numero de id ascendente
+     productos.sort((a, b) => a.id - b.id);
 
-
-    const filtroTodos = document.getElementById('todos');
-    filtroTodos.addEventListener('click', function () {
-        renderProductos(productos);
-    });
-    const filtroAccesorios = document.getElementById('anteojos');
-    filtroAccesorios.addEventListener('click', function () {
-        renderProductos(Accesorios);
-    });
+     // Por default puse que se ejecute con todos los productos para que no se vea vacio
+     renderProductos(productos)
 
 
-    const filtroIndumentaria = document.getElementById('gorritos');
-    filtroIndumentaria.addEventListener('click', function () {
-        renderProductos(Indumentaria)
-    });
-    // console.log(Accesorios);
+     const filtroTodos = document.getElementById('todos');
+     filtroTodos.addEventListener('click', function () {
+         renderProductos(productos);
+     });
+     const filtroAccesorios = document.getElementById('anteojos');
+     filtroAccesorios.addEventListener('click', function () {
+         renderProductos(Accesorios);
+     });
+
+
+     const filtroIndumentaria = document.getElementById('gorritos');
+     filtroIndumentaria.addEventListener('click', function () {
+         renderProductos(Indumentaria)
+     });
+
+    // Filtrar por categoria
+    let Accesorios = productos.filter((producto) => producto.categoria == "Accesorios");
+    let Indumentaria = productos.filter((producto) => producto.categoria == "Indumentaria");
+
+    
+
+     function agregarProducto(e) {
+         const found = productos.find(producto => producto.id == e.target.dataset.id);
+         arrayCarrito.push(found);
+
+
+
+         // if(arrayCarrito.length >= 3) {
+         //      const carritoEliminar = arrayCarrito.find(producto => producto.id == e.target.dataset.id);
+         //      arrayCarrito.forEach(carritoEliminar => {
+         //         arrayCarrito.pop(carritoEliminar)
+         //      })
+         // }
+
+         console.log(arrayCarrito);
+         carrito.innerHTML = arrayCarrito.length;
+         let total = [];
+
+         arrayCarrito.forEach(found => {
+             total.push(found.precio);
+             guardarLocal('productos', JSON.stringify(arrayCarrito));
+             guardarLocal('total', JSON.stringify(total));
+
+         });
+
+         let sum = 0;
+         let arrayTotal = JSON.parse(localStorage.getItem('total')) || [];
+
+         for (let i = 0; i < arrayTotal.length; i++) {
+             sum += arrayTotal[i];
+             document.getElementById('total').innerHTML = 'Total: $' + '' + sum;
+             guardarLocal('sumado', JSON.stringify(sum));
+
+         }
+
+         renderCarrito(arrayCarrito);
+     }
+    
+
+
+    
+
 
 
     // Agregar al carrito
 
 
     const botonAgregar = document.querySelectorAll('.btn-comprar');
-    const botonEliminar = document.querySelectorAll('.btn-eliminar');
-    carrito.innerHTML = 0;
+    const botonEliminar = document.getElementById('eliminar-todo');
+    botonEliminar.onclick = limpiarStorage;
+        
+   
+     function limpiarStorage() {
+         localStorage.clear();
+         renderCarrito(arrayCarrito);
+     }
+
 
     botonAgregar.forEach(el => {
-
         el.addEventListener('click', function (e) {
             e.preventDefault()
-
-            //  console.log(arrayCarrito);
-            //  console.log(el.parentNode.parentElement);
-
-            const found = productos.find(producto => producto.id == e.target.dataset.id);
-            arrayCarrito.push(found);
-
-            // console.log(arrayCarrito);
-
-
-
-            console.log(arrayCarrito);
-            carrito.innerHTML = arrayCarrito.length;
-            let total = [];
-
-            arrayCarrito.forEach(found => {
-                total.push(found.precio);
-                guardarLocal('productos', JSON.stringify(arrayCarrito));
-                guardarLocal('total', JSON.stringify(total));
-
-            });
-
-
-
-            // console.log(total);
-            
-            let sum = 0;
-            let arrayTotal = JSON.parse(localStorage.getItem('total')) || [];
-            //  for (let i = 0; i < total.length; i++) {
-            //      sum += total[i];
-            //       document.getElementById('total').innerHTML = 'Total: $' + '' + sum;
-            //  }
-
-            for (let i = 0; i < arrayTotal.length; i++) {
-                sum += arrayTotal[i];
-                document.getElementById('total').innerHTML = 'Total: $' + '' + sum;
-                guardarLocal('sumado', JSON.stringify(sum));
-            }
-
-            // console.log(storageArray);
-
-
-            renderCarrito(arrayCarrito);
-
-
+            agregarProducto(e);
         });
-
     });
+
     const guardarLocal = (clave, valor) => {
         localStorage.setItem(clave, valor);
+       
     }
+
+    carrito.innerHTML = 0;
     let arrayCarrito = JSON.parse(localStorage.getItem('productos')) || [];
     let itemSumado = JSON.parse(localStorage.getItem('sumado')) || [];
-    // console.log(itemSumado);
     document.getElementById('total').innerHTML = 'Total: $' + '' + itemSumado;
     carrito.innerHTML = arrayCarrito.length;
- 
     renderCarrito(arrayCarrito);
-
 
 
 
