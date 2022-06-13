@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "categoria": "Indumentaria",
+        "titulo": "Gorrita blanca",
+        "descripcion":"Descripcion",
+        "precio":155,
+        "img": "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"
+    },
+    {
+        "id": 2,
+        "categoria": "Indumentaria",
+        "titulo": "Gorrita roja",
+        "descripcion": "Descripcion",
+        "precio": 555,
+        "img": "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"
+    },
+    {
+        "id": 3,
+        "categoria": "Indumentaria",
+        "titulo": "Gorrita roja",
+        "descripcion": "Descripcion",
+        "precio": 155,
+        "img": "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"
+    },
+    {
+        "id": 4,
+        "categoria": "Indumentaria",
+        "titulo": "Gorrita blanca",
+        "descripcion": "Descripcion",
+        "precio": 155,
+        "img": "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"
+    },
+    {
+        "id": 5,
+        "categoria": "Accesorios",
+        "titulo": "Anteojo Rust",
+        "descripcion": "Descripcion",
+        "precio": 55155,
+        "img": "https://images.unsplash.com/photo-1501619838605-f3e4c602db04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+    },
+    {
+        "id":6,
+        "categoria": "Accesorios",
+        "titulo": "lente ded sol",
+        "descripcion": "Descripcion",
+        "precio": 955,
+        "img": "https://images.unsplash.com/photo-1501619838605-f3e4c602db04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+    },
+    {
+        "id": 7,
+        "categoria": "Accesorios",
+        "titulo": "lente",
+        "descripcion": "Descripcion",
+        "precio": 12555,
+        "img": "https://images.unsplash.com/photo-1501619838605-f3e4c602db04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+    }
+
+]
