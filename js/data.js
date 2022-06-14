@@ -104,7 +104,7 @@ window.addEventListener('DOMContentLoaded', () => {
                             <p class="producto-titulo">${producto.titulo}</p>
                 
                             <div class="compra-botones">
-                                <button class="btn btn-eliminar">Eliminar</button>
+                                <button class="btn btn-eliminar" data-id="${producto.id}">Eliminar</button>
                                 <span>$${producto.precio}</span>
                             </div>
                 
@@ -161,15 +161,35 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
             renderCarrito(arrayCarrito);
+            const botonEliminar = document.querySelectorAll('.btn-eliminar');
+            botonEliminar.forEach(el => {
+                console.log(el);
+                el.addEventListener('click', function (e) {
+                    e.preventDefault()
+                    eliminarProducto(e);
+                })
+            })
+
         }
 
-        const botonAgregar = document.querySelectorAll('.btn-comprar');
-        const botonEliminar = document.getElementById('eliminar-todo');
+        function eliminarProducto(e) {
+            e.preventDefault()
+            const found = arrayCarrito.find(producto => producto.id == e.target.dataset.id);
+            console.log(found);
+            arrayCarrito.pop(found);
+            renderCarrito(arrayCarrito);
+        }
 
-        botonEliminar.onclick = limpiarStorage;
+
+        const botonAgregar = document.querySelectorAll('.btn-comprar');
+
+        const botonEliminarTodo = document.getElementById('eliminar-todo');
+
+
+        botonEliminarTodo.onclick = limpiarStorage;
 
         botonAgregar.forEach(el => {
-            console.log(el);
+            // console.log(el);
             el.addEventListener('click', function (e) {
                 e.preventDefault()
                 agregarProducto(e);
@@ -178,18 +198,14 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+
         function limpiarStorage() {
             localStorage.clear();
             window.location.reload()
             renderCarrito(arrayCarrito);
         }
-
-
-
-
         const guardarLocal = (clave, valor) => {
             localStorage.setItem(clave, valor);
-
         }
 
         carrito.innerHTML = 0;
@@ -200,8 +216,5 @@ window.addEventListener('DOMContentLoaded', () => {
         renderCarrito(arrayCarrito);
 
     }
-    
-
-
 
 });
