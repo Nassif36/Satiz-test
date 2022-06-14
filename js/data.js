@@ -6,13 +6,12 @@ class Productos {
         this.descripcion = producto.descripcion;
         this.precio = producto.precio;
         this.img = producto.img;
-
-
     }
 }
-let productos = [];
-const botonEliminarTodo = document.getElementById('eliminar-todo');
 
+let productos = [];
+
+const botonEliminarTodo = document.getElementById('eliminar-todo');
 const guardarLocal = (clave, valor) => {
     localStorage.setItem(clave, valor);
 }
@@ -20,7 +19,7 @@ const guardarLocal = (clave, valor) => {
 // Funcion para reenderizar productos
 function renderProductos(array) {
     let productosHTML = '';
-    const botonAgregar = document.querySelectorAll('.btn-comprar');
+
     for (const producto of array) {
 
         productosHTML = productosHTML + `
@@ -40,9 +39,10 @@ function renderProductos(array) {
                 </li>
 
             `
-    
+
         document.getElementById('productos').innerHTML = productosHTML;
     }
+    const botonAgregar = document.querySelectorAll('.btn-comprar');
     botonAgregar.forEach(el => {
         console.log(el);
         // console.log(el);
@@ -61,6 +61,7 @@ function objetoArray(array) {
     }
 }
 
+// Eliminar todos los elementos de una
 function limpiarStorage() {
     localStorage.clear();
     window.location.reload()
@@ -68,90 +69,73 @@ function limpiarStorage() {
 }
 
 // Consumir el json
-
 fetch('./productos.json')
     .then((resp) => resp.json())
     .then((data) => {
         let productosJSON = [...data];
         objetoArray(productosJSON);
         console.log(productos);
-        renderProductos(productos);
+        renderProductos(productosJSON);
         filtros();
         return productos
     })
 console.log(productos);
 
 
-    // Agregar al carrito
-    function agregarProducto(e) {
-        let arrayCarrito = getLocal();
-        const found = productos.find(producto => producto.id == e.target.dataset.id);
-        arrayCarrito.push(found);
-        carrito.innerHTML = arrayCarrito.length;
-        Toastify({
-            text: "Agregaste " + ' ' + found.titulo,
-            className: "info",
-            style: {
-                background: "linear-gradient(to right, #2063aa, #20aa67)",
-            }
-        }).showToast();
-
-        console.log(arrayCarrito);
-        carrito.innerHTML = arrayCarrito.length;
-        let total = [];
-
-        arrayCarrito.forEach(found => {
-            total.push(found.precio);
-            guardarLocal('productos', JSON.stringify(arrayCarrito));
-        });
-
-
-
-
-        // for (let i = 0; i < arrayTotal.length; i++) {
-        //     sum += arrayTotal[i];
-        //     document.getElementById('total').innerHTML = 'Total: $' + '' + sum;
-        //     guardarLocal('sumado', JSON.stringify(sum));
-        // }
-        function pintarTotal() {
-            let arrayCarrito = getLocal();
-            const sumaCarrito = arrayCarrito.reduce(
-                (previousValue, currentValue) => previousValue + currentValue.precio, 0
-            );
-            document.getElementById('total').innerHTML = 'Total: $' + '' + sumaCarrito;
+// Agregar al carrito
+function agregarProducto(e) {
+    let arrayCarrito = getLocal();
+    const found = productos.find(producto => producto.id == e.target.dataset.id);
+    arrayCarrito.push(found);
+    carrito.innerHTML = arrayCarrito.length;
+    Toastify({
+        text: "Agregaste " + ' ' + found.titulo,
+        className: "info",
+        style: {
+            background: "linear-gradient(to right, #2063aa, #20aa67)",
         }
+    }).showToast();
 
-        renderCarrito(arrayCarrito);
-        const botonEliminar = document.querySelectorAll('.btn-eliminar');
-        botonEliminar.forEach(el => {
-            console.log(el);
-            el.addEventListener('click', function (e) {
-                e.preventDefault()
-                eliminarProducto(e);
-            })
-        })
+    console.log(arrayCarrito);
+    carrito.innerHTML = arrayCarrito.length;
+    let total = [];
 
-    }
+    arrayCarrito.forEach(found => {
+        total.push(found.precio);
+        guardarLocal('productos', JSON.stringify(arrayCarrito));
+    });
 
-    function eliminarProducto(e) {
-        e.preventDefault();
-        let arrayCarrito
-        const found = arrayCarrito.find(producto => producto.id == e.target.dataset.id);
-        console.log(found);
-        arrayCarrito.pop(found);
-        renderCarrito(arrayCarrito);
-    }
-
-
-    botonEliminarTodo.onclick = limpiarStorage;
-
-
-
-    carrito.innerHTML = 0;
-    // let arrayCarrito = JSON.parse(localStorage.getItem('productos')) || [];
-    // let itemSumado = JSON.parse(localStorage.getItem('sumado')) || [];
     renderCarrito();
+}
 
+// Eliminar productos uno por uno
+function eliminarProducto(e) {
+    e.preventDefault();
+    let arrayCarrito = getLocal();
+    const index = arrayCarrito.findIndex(producto => producto.id == e.target.dataset.id);
+    // const found = arrayCarrito.find(producto => producto.id == e.target.dataset.id);
+    console.log(index);
+    arrayCarrito.splice(index, 1);
+    guardarLocal('productos', JSON.stringify(arrayCarrito));
+    renderCarrito();
+    carrito.innerHTML = arrayCarrito.length;
+}
+
+// Mostrar total del carrito
+function pintarTotal() {
+    let arrayCarrito = getLocal();
+    const sumaCarrito = arrayCarrito.reduce(
+        (previousValue, currentValue) => previousValue + currentValue.precio, 0
+    );
+    document.getElementById('total').innerHTML = 'Total: $' + '' + sumaCarrito;
+}
+
+botonEliminarTodo.onclick = limpiarStorage;
+
+carrito.innerHTML = 0;
+
+
+// Capturar los productos guardados a local
 function getLocal() {
     return JSON.parse(localStorage.getItem('productos')) || [];
 }
@@ -181,8 +165,10 @@ function filtros() {
     });
 }
 
+// Reenderizar productos 
 function renderCarrito() {
     let arrayCarrito = getLocal();
+    document.getElementById('listaproductos').innerHTML = '';
     let carritoHTML = '';
     for (const producto of arrayCarrito) {
         carritoHTML = carritoHTML + `
@@ -202,14 +188,20 @@ function renderCarrito() {
                 `
         document.getElementById('listaproductos').innerHTML = carritoHTML;
     }
-     pintarTotal()
+    const botonEliminar = document.querySelectorAll('.btn-eliminar');
+    botonEliminar.forEach(el => {
+        console.log(el);
+        el.addEventListener('click', function (e) {
+            e.preventDefault();
+            eliminarProducto(e);
+        })
+    })
+    pintarTotal()
 }
 
 
 window.addEventListener('DOMContentLoaded', () => {
-
-
-
-
-
+    getLocal()
+    renderProductos()
+    renderCarrito()
 });
